@@ -1,0 +1,170 @@
+/* Reset & basics */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+body { background:#f5f6fa; color:#333; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
+
+/* Header */
+header { background:#007BFF; color:#fff; padding:15px 0; display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; }
+header h1 { margin-left:10px; font-size:24px; }
+header nav ul { list-style:none; display:flex; gap:20px; }
+header nav ul li a { color:#fff; text-decoration:none; font-weight:bold; }
+header nav ul li a:hover { text-decoration:underline; }
+
+/* Search & Filter */
+.search-filter { padding:20px 0; background:#e9ecef; margin-bottom:20px; border-radius:12px; }
+.search-filter input { padding:10px; width:100%; max-width:400px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
+.category-filters { margin-top:10px; }
+.filter-btn { padding:6px 12px; border:none; border-radius:8px; margin-right:8px; cursor:pointer; background:#007BFF; color:#fff; font-size:14px; transition:0.2s; }
+.filter-btn:hover { background:#0056b3; }
+.filter-btn.active { background:#28a745; }
+
+/* Job Tags */
+.job-tag { display:inline-block; padding:4px 8px; border-radius:6px; font-size:12px; margin-right:6px; color:#fff; }
+.job-tag.Tech { background:#28a745; }
+.job-tag.Sales { background:#ffc107; color:#000; }
+.job-tag.Design { background:#17a2b8; }
+
+/* Job Feed Grid */
+.job-feed .container { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:20px; }
+
+/* Job Card - Instagram style */
+.job-card {
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    transition:0.3s;
+}
+
+.job-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.job-card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* Highlight new post */
+.job-card.new-post {
+    border: 3px solid #28a745;
+    animation: highlightFade 3s ease-in-out;
+}
+@keyframes highlightFade {
+    0% { box-shadow: 0 0 20px rgba(40,167,69,0.8); }
+    50% { box-shadow: 0 0 10px rgba(40,167,69,0.5); }
+    100% { box-shadow: 0 0 0 rgba(40,167,69,0); }
+}
+
+.job-info {
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+.job-info p { margin:0; line-height:1.4; }
+.job-info p strong { color:#007BFF; }
+.job-info p.salary { font-weight:bold; color:#28a745; font-size:16px; }
+.job-info p.location, .job-info p.company { color:#555; font-size:14px; }
+
+/* Share buttons */
+.share-buttons { padding:0 15px 15px; font-size:14px; }
+.share-buttons a { text-decoration:none; color:#007BFF; margin-right:10px; }
+.share-buttons a:hover { text-decoration:underline; }
+
+/* Delete button */
+.delete-btn { background:#dc3545; color:#fff; border:none; padding:6px 10px; border-radius:8px; cursor:pointer; margin-left:5px; transition:0.2s; }
+.delete-btn:hover { background:#c82333; }
+
+/* Post Job Form - Instagram-style */
+.post-job {
+    background:#fff;
+    padding:30px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+}
+.post-job:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+.post-job h2 { text-align:center; color:#007BFF; margin-bottom:25px; font-size:26px; }
+
+.post-job form { display:flex; flex-direction:column; gap:15px; }
+
+.post-job input[type="text"],
+.post-job input[type="email"],
+.post-job input[type="file"],
+.post-job textarea {
+    padding:12px 15px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+    transition:0.2s;
+}
+
+.post-job input:focus,
+.post-job textarea:focus { outline:none; border-color:#007BFF; box-shadow:0 0 8px rgba(0,123,255,0.2); }
+
+.post-job button {
+    padding:12px;
+    background:#007BFF;
+    color:#fff;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.2s;
+}
+.post-job button:hover { background:#0056b3; }
+
+/* Category checkboxes as Instagram-style tags */
+.category-selection { display:flex; gap:10px; flex-wrap:wrap; }
+.category-selection label {
+    background:#007BFF;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:15px;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.2s;
+}
+.category-selection input[type="checkbox"] { display:none; }
+.category-selection input[type="checkbox"]:checked + label { background:#28a745; }
+
+/* Image preview */
+#companyLogo {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition:0.2s;
+}
+#companyLogo:hover { border-color:#007BFF; }
+.post-job img.preview {
+    width:100%;
+    max-height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-top:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer { background:#343a40; color:#fff; padding:20px 0; text-align:center; }
+footer a { color:#ffc107; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+
+/* Responsive */
+@media(max-width:768px){
+    .job-feed .container { grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); }
+    .job-card img { height:180px; }
+    .post-job { padding:20px 15px; }
+    .post-job h2 { font-size:22px; }
+}

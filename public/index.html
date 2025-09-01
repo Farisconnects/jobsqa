@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBS.QA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>JOBS.QA</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#post-job">Post Job</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- Search & Filters -->
+    <section class="search-filter">
+        <input type="text" id="searchInput" placeholder="🔍 Search jobs by title, location, or tags">
+        <div class="category-filters" id="categoryFilters"></div>
+    </section>
+
+    <!-- Job Feed -->
+    <section class="job-feed">
+        <div class="container" id="jobs-container">
+            <!-- Jobs will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Post Job Form -->
+    <section class="post-job" id="post-job">
+        <h2>Post a Job</h2>
+        <form id="jobForm">
+            <input type="text" id="jobTitle" placeholder="Job Title" required>
+            <input type="text" id="companyName" placeholder="Company Name" required>
+            <input type="text" id="jobLocation" placeholder="Location" required>
+            <input type="text" id="jobSalary" placeholder="Salary (optional)">
+            <textarea id="jobDescription" rows="4" placeholder="Job Description"></textarea>
+            <input type="email" id="contactEmail" placeholder="Email for contact">
+            <input type="text" id="contactWhatsApp" placeholder="WhatsApp number for contact">
+            
+            <!-- Category checkboxes -->
+            <div class="category-selection">
+                <input type="checkbox" id="tech" value="Tech"><label for="tech">Tech</label>
+                <input type="checkbox" id="sales" value="Sales"><label for="sales">Sales</label>
+                <input type="checkbox" id="design" value="Design"><label for="design">Design</label>
+            </div>
+
+            <!-- Company logo/image upload -->
+            <input type="file" id="companyLogo" accept="image/*">
+
+            <button type="submit">Post Job</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    © 2025 JOBS.QA | All Rights Reserved <br>
+    Contact: <a href="mailto:farisbinrafeeque3@gmail.com">farisbinrafeeque3@gmail.com</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
